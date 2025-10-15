@@ -1,104 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: #000; /* Black background */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    /* Logo text */
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff6600; /* orange hover color */
+    }
+
+    /* Responsive for small screens */
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-red-600 to-gray-800 text-white">
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-full bg-gray-900 text-white w-64 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50 shadow-xl`}
-      >
-        
-        <div className="flex justify-between items-center p-4 border-b border-gray-700">
-          <a href="#" className="text-2xl font-bold tracking-wide">
-            lakshya
-          </a>
-          <button onClick={() => setIsOpen(false)} className="text-2xl hover:text-gray-400">
-            <FiX />
-          </button>
-        </div>
 
-        
-        <ul className="flex flex-col gap-6 mt-8 px-6 text-lg">
-          <li>
-            <a href="#" className="hover:text-gray-400 transition duration-200 ">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="about" className="hover:text-gray-400 transition duration-200">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="contact" className="hover:text-gray-400 transition duration-200">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a href="blog" className="hover:text-gray-400 transition duration-200">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="portfolio" className="hover:text-gray-400 transition duration-200">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="services" className="hover:text-gray-400 transition duration-200">
-              Services
-            </a>
-          </li>
-        </ul>
+  <nav class="navbar">
+    <div class="logo">MyWebsite</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-        
-        <div className="absolute bottom-6 left-0 w-full flex justify-center gap-6 text-2xl">
-          <a href="insagram" aria-label="Instagram" className="hover:text-pink-500 transition">
-            <FaInstagramSquare />
-          </a>
-          <a href="facebook" aria-label="Facebook" className="hover:text-blue-600 transition">
-            <FaFacebook />
-          </a>
-          <a href="twitter" aria-label="X/Twitter" className="hover:text-gray-400 transition">
-            <FaSquareXTwitter />
-          </a>
-          <a href="bootstrap" arial-label="Bootstrap" className="hover:text-blue-600 transition">
-            <SiBootstrap/>
-          </a>
-          <a href="sell" arial-label="Sell" className="hover:text-pink-500 transition">
-            <FaBuysellads/>
-          </a>
-        </div>
-      </div>
-
-      
-      <header className="w-full bg-black text-white shadow-md sticky top-0 z-40 flex items-center justify-between px-6 py-4">
-      
-        <a href="#" className="text-2xl font-bold tracking-wide">
-          lakshya
-        </a>
-
-        
-        <button
-          onClick={() => setIsOpen(true)}
-          className="text-3xl hover:text-gray-300 transition"
-        >
-          <FiMenu />
-        </button>
-      </header>
-
-      
-      <main className="flex-grow flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-5xl font-bold mb-4 text-white">Lakshya:The destroyer</h1>
-
-        <div>
-          <img className="h-75  rounded-3xl" src="https://mir-s3-cdn-cf.behance.net/projects/404/03284a155313973.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpg" alt="" />
-        </div>
 </body>
 </html>
