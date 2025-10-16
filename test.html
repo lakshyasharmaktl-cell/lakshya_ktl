@@ -3,67 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Navbar</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Navbar styling */
-    .navbar {
-      background-color: #000; /* Black background */
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-    }
-
-    /* Logo text */
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    /* Navigation links */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #ff6600; /* orange hover color */
-    }
-
-    /* Responsive for small screens */
-    @media (max-width: 600px) {
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+  <title>Greeting Example</title>
 </head>
-<body>
+<body style="font-family: Arial; text-align: center; margin-top: 100px;">
+  <h1 id="greeting"></h1>
 
-  <nav class="navbar">
-    <div class="logo">MyWebsite</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <script>
+    // Function to greet the user based on time
+    function showGreeting() {
+      const hour = new Date().getHours();
+      let message = "";
 
+      if (hour < 12) {
+        message = "Good Morning 🌞";
+      } else if (hour < 18) {
+        message = "Good Afternoon ☀️";
+      } else {
+        message = "Good Evening 🌙";
+      }
+
+      document.getElementById("greeting").textContent = message;
+    }
+
+    // Call the function when page loads
+    showGreeting();
+  </script>
 </body>
 </html>
